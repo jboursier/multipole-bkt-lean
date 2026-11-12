@@ -1,0 +1,31 @@
+name = "MultipoleBKT"
+version = "1.0.0"
+defaultTargets = ["MultipoleBKT"]
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+relaxedAutoImplicit = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.35.0-rc2"
+
+# The formalization of the companion paper *Dipole formation in the two-component plasma*
+# (arXiv:2410.01025), pinned at a commit of its public release.
+[[require]]
+name = "TwoComponentCoulomb"
+git = "https://github.com/serfatysylvia/two-component-coulomb-dipoles-dev.git"
+rev = "ea3906a5850aaece11adee4b5562041e7512cfb6"
+
+[[lean_lib]]
+name = "MultipoleBKT"
+# Build the root and every module under the namespace.
+globs = ["MultipoleBKT", "MultipoleBKT.+"]
+
+[[lean_lib]]
+name = "MultipoleBKTAudit"
+# The comparator pairs. Each challenge has one intentional `sorry`, so this library is not a
+# default target: build it with `lake build MultipoleBKTAudit`.
+globs = ["MultipoleBKTAudit.+"]

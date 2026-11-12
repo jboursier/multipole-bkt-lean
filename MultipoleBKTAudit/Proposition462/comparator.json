@@ -1,0 +1,12 @@
+{
+  "challenge_module": "MultipoleBKTAudit.Proposition462.Challenge",
+  "solution_module": "MultipoleBKTAudit.Proposition462.Solution",
+  "theorem_names": [
+    "MultipoleBKTAudit.Proposition462.MultipoleBKT.proposition_4_62"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

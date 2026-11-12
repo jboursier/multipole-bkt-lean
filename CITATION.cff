@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this formalization, please cite it as below."
+title: "Multipole and Berezinskii-Kosterlitz-Thouless transitions in the two-component plasma: a Lean 4 formalization"
+type: software
+repository-code: "https://github.com/jboursier/multipole-bkt-lean"
+abstract: >-
+  A machine-checked Lean 4 and Mathlib formalization of the main results of the paper
+  "Multipole and Berezinskii-Kosterlitz-Thouless Transitions in the Two-component Plasma":
+  the free energy expansion of the two-dimensional two-component plasma with smeared charges,
+  in terms of dipole activities and the Mayer series, and the multipole distribution, with
+  large deviations for the multipole counts and the typical number of multipoles, for every
+  inverse temperature beta > 2. The development imports the formalization of the companion
+  paper as TwoComponentCoulomb. The library contains no sorry and no custom axiom, and each
+  of the seven formalized results has a Mathlib-only comparator challenge.
+authors:
+  - family-names: Boursier
+    given-names: Jeanne
+  - family-names: Serfaty
+    given-names: Sylvia
+keywords:
+  - Lean
+  - mathlib
+  - formal verification
+  - two-component plasma
+  - Coulomb gas
+  - Berezinskii-Kosterlitz-Thouless transition
+  - multipoles
+  - large deviations
+license: Apache-2.0
+preferred-citation:
+  type: article
+  title: "Multipole and Berezinskii-Kosterlitz-Thouless Transitions in the Two-component Plasma"
+  authors:
+    - family-names: Boursier
+      given-names: Jeanne
+    - family-names: Serfaty
+      given-names: Sylvia
+  identifiers:
+    - type: other
+      value: "arXiv:2509.09449"
+  url: "https://arxiv.org/abs/2509.09449"
+  year: 2025

@@ -1,0 +1,247 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Multipole and Berezinskii-Kosterlitz-Thouless transitions in the two-component plasma"
+  description: >-
+    A Lean 4 formalization of the paper "Multipole and Berezinskii-Kosterlitz-Thouless
+    Transitions in the Two-component Plasma" by Jeanne Boursier and Sylvia Serfaty: the free
+    energy expansion of the two-dimensional two-component plasma with smeared charges in
+    terms of dipole activities and the Mayer series (Theorem 1), and the multipole
+    distribution, with the rate function, the expansion of the free energy through its
+    minimum, the control of large multipoles and long dipoles, large deviations for the
+    multipole counts, the unique minimizer and the typical number of multipoles (Theorem 2),
+    for every beta > 2. The five intermediate results on which their proofs rest,
+    Propositions 4.23, 4.62, 5.43 and 5.45 and Lemma 5.46, are proved in the form the main
+    theorems use; Proposition 4.23 is stated for the three activities that Theorems 1 and 2
+    use. The development imports Mathlib and the companion formalization TwoComponentCoulomb.
+    The seven results have Mathlib-only comparator pairs under MultipoleBKTAudit/.
+  authors:
+    - "Jeanne Boursier"
+    - "Sylvia Serfaty"
+  responsible_maintainers:
+    - "Jeanne Boursier"
+  license: "Apache-2.0"
+
+classification:
+  arxiv: ["math-ph", "math.PR"]
+  msc2020: ["82B05", "82B21", "82B26", "60F10"]
+
+sources:
+  - title: "Multipole and Berezinskii-Kosterlitz-Thouless Transitions in the Two-component Plasma"
+    authors:
+      - "Jeanne Boursier"
+      - "Sylvia Serfaty"
+    type: "paper"
+    relationship: "formalizes"
+    location: "https://arxiv.org/abs/2509.09449"
+    note: >-
+      Revised version (2026). The repository uses its numbering: Theorems 1 and 2,
+      Propositions 4.23, 4.62, 5.43 and 5.45, and Lemma 5.46. The encodings are described
+      under fidelity.divergences and in the README.
+    license: "author's copyright"
+    author_endorsement: "participated"
+  - title: "Dipole formation in the two-component plasma"
+    authors:
+      - "Jeanne Boursier"
+      - "Sylvia Serfaty"
+    type: "paper"
+    relationship: "background"
+    location: "https://arxiv.org/abs/2410.01025"
+    note: >-
+      Companion paper. Its formalization is imported as the Lake package TwoComponentCoulomb
+      from https://github.com/serfatysylvia/two-component-coulomb-dipoles-dev at commit
+      ea3906a5850aaece11adee4b5562041e7512cfb6. This repository uses its square, its
+      logarithmic kernel and its proved potential-theory and integration lemmas.
+    license: "author's copyright"
+    author_endorsement: "participated"
+
+related_formalizations:
+  - id: "https://github.com/serfatysylvia/two-component-coulomb-dipoles-dev"
+    relationship: "builds-on"
+    revision: "ea3906a5850aaece11adee4b5562041e7512cfb6"
+    note: "Imported as the Lake package TwoComponentCoulomb, with all its proofs."
+
+# No literature result is assumed: the standard's per-result literature_dependencies fields are
+# empty.
+status:
+  scope: >-
+    Theorem 1 (MultipoleBKT.theorem_1) and Theorem 2 (MultipoleBKT.theorem_2) for every
+    beta > 2, every mollifier and every p_0 >= 1, and the intermediate results Proposition
+    4.23 (MultipoleBKT.proposition_4_23), Proposition 4.62 (MultipoleBKT.proposition_4_62),
+    Proposition 5.43 (MultipoleBKT.proposition_5_43), Proposition 5.45
+    (MultipoleBKT.proposition_5_45) and Lemma 5.46 (MultipoleBKT.lemma_5_46). Results of the
+    paper that these proofs do not use, the heuristic and expository remarks, and Appendix B
+    (the Sine-Gordon correspondence) are not formalized.
+  sorry_count: 0
+  sorry_count_scope: "MultipoleBKT library only"
+  comparator_challenge_sorry_count: 7
+  sorry_in_definitions: 0
+  axioms:
+    - "propext"
+    - "Classical.choice"
+    - "Quot.sound"
+  main_results:
+    - declaration: "MultipoleBKT.theorem_1"
+      file: "MultipoleBKT/Frozen/Theorem1.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "MultipoleBKTAudit/Theorem1/comparator.json"
+      literature_dependencies: []
+    - declaration: "MultipoleBKT.theorem_2"
+      file: "MultipoleBKT/Frozen/Theorem2.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "MultipoleBKTAudit/Theorem2/comparator.json"
+      literature_dependencies: []
+    - declaration: "MultipoleBKT.proposition_4_23"
+      file: "MultipoleBKT/Frozen/Proposition423.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "MultipoleBKTAudit/Proposition423/comparator.json"
+      literature_dependencies: []
+    - declaration: "MultipoleBKT.proposition_4_62"
+      file: "MultipoleBKT/Frozen/Proposition462.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "MultipoleBKTAudit/Proposition462/comparator.json"
+      literature_dependencies: []
+    - declaration: "MultipoleBKT.proposition_5_43"
+      file: "MultipoleBKT/Frozen/Proposition543.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "MultipoleBKTAudit/Proposition543/comparator.json"
+      literature_dependencies: []
+    - declaration: "MultipoleBKT.proposition_5_45"
+      file: "MultipoleBKT/Frozen/Proposition545.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "MultipoleBKTAudit/Proposition545/comparator.json"
+      literature_dependencies: []
+    - declaration: "MultipoleBKT.lemma_5_46"
+      file: "MultipoleBKT/Frozen/Lemma546.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "MultipoleBKTAudit/Lemma546/comparator.json"
+      literature_dependencies: []
+
+automation:
+  methods:
+    - method: "agent"
+      models:
+        - "gpt-6.1-sol"
+      framework: "Codex CLI (OpenAI)"
+      tool_setup: >-
+        Statement writing, proof development, audits of the statements against the paper and
+        read-only reviews of the proofs against the written proofs, with Lean builds under
+        leanprover/lean4:v4.35.0-rc2 and Mathlib v4.35.0-rc2.
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local macOS and Linux machines"
+      prompting_notes: >-
+        Human-directed work. Each task fixed the statements to be proved and forbade changing
+        them.
+    - method: "agent"
+      models:
+        - "claude-opus-5-5"
+      framework: "Claude Code (Anthropic)"
+      tool_setup: >-
+        Claude Opus 5.5 coordinated the agents, reviewed their work and prepared the release.
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local Linux machine"
+      prompting_notes: >-
+        Human-directed work on author-specified statements.
+  spend_usd: "not tracked"
+  notes: >-
+    The Lean code was written with AI assistance under the direction of the authors, who fixed
+    the statements to be formalized. Every proof is checked by the Lean kernel, and the library
+    contains no sorry and no custom axiom. The seven Mathlib-only comparator challenge files
+    (MultipoleBKTAudit/*/Challenge.lean) each contain exactly one intentional statement-level
+    sorry, which the corresponding Solution.lean proves and leanprover/comparator checks.
+    Scott Armstrong shared the setup used for the formalization.
+
+fidelity:
+  divergences: >-
+    The plane is the complex numbers. A configuration is c : Fin N -> C x C with
+    c i = (x_i, y_i), so labels start at 0. The square [0, sqrt N]^2 and the logarithmic
+    kernel are those of TwoComponentCoulomb. The mollifier is measurable, nonnegative, radial,
+    bounded, zero outside the closed unit disc and of integral 1. Each O(.) term is explicit:
+    there are C > 0 and lambda_0 in (0,1] such that for every lambda in (0, lambda_0) there is
+    N_0(lambda) with the bound for every N >= N_0(lambda); the mollifier and p_0 are fixed
+    first. Where the paper takes M large the statements give M_0 > 20 with the conclusion for
+    every M >= M_0, and where it takes epsilon_0 small they give epsilon_1 with the conclusion
+    for every epsilon_0 in (0, epsilon_1). N_0 is uniform in gamma in Theorem 2(4) and in the
+    multipole profile in Propositions 4.62 and 5.43. In Theorem 2(6), lambda_0 and N_0 are
+    chosen after C_0. The partition function is a lower Lebesgue integral in [0, infinity];
+    0 < Z < infinity is concluded and log Z is the logarithm of its real value. Bounds on
+    log P(E) are written as bounds on P(E). The stable matching is the greedy rule with
+    lexicographic ties, and bad points of a configuration are those of its matched dipoles.
+    The coefficients k^dip, m and k^mult are not definitions: the theorems assert families
+    with the defining limits for every lambda in (0,1) and the bounds for lambda < lambda_0,
+    and the Mayer series and the rate function are functions of the coefficients. Infinite
+    sums are tsums whose absolute convergence each statement concludes. Infima are infima of
+    images. Proposition 4.23 is stated, as in the revised version, for each size k <= p*(beta)
+    and every M >= M_0(beta, k), for the activities that Theorems 1 and 2 use. Definitions are
+    total and take Mathlib's conventional values outside the paper's ranges.
+
+review:
+  status: "agent-reviewed"
+  reviewers:
+    - "GPT-6.1 Sol, independent audits of every statement and definition against the paper"
+    - "GPT-6.1 Sol, independent read-only reviews of the proofs against the written proofs"
+  notes: >-
+    Every proof is checked by the Lean kernel, and the seven statements have comparator pairs
+    for replay by independent kernels through leanprover/comparator. The statements and the
+    definitions they use were written before the proofs, audited against the paper by agents
+    that did not write them, and approved by the authors in their exact Lean form. The proofs
+    on the dependency path of the seven results were then compared, section by section, with
+    the written proofs of the revised version, and the differences found were resolved in
+    the Lean.
+
+alignment:
+  namespace: "MultipoleBKT"
+  statements:
+    - source: "Theorem 1 (free energy expansion)"
+      lean: "MultipoleBKT.theorem_1"
+      module: "MultipoleBKT.Frozen.Theorem1"
+      status: "proved"
+      note: "Comparator surface: MultipoleBKTAudit/Theorem1/, with shared Definitions.lean."
+    - source: "Theorem 2 (multipole distribution)"
+      lean: "MultipoleBKT.theorem_2"
+      module: "MultipoleBKT.Frozen.Theorem2"
+      status: "proved"
+      note: "Comparator surface: MultipoleBKTAudit/Theorem2/, with shared Definitions.lean."
+    - source: "Proposition 4.23 (control of the activity of bounded-size clusters)"
+      lean: "MultipoleBKT.proposition_4_23"
+      module: "MultipoleBKT.Frozen.Proposition423"
+      status: "proved"
+      note: "Comparator surface: MultipoleBKTAudit/Proposition423/, with shared Definitions.lean."
+    - source: "Proposition 4.62 (large deviations lower bound)"
+      lean: "MultipoleBKT.proposition_4_62"
+      module: "MultipoleBKT.Frozen.Proposition462"
+      status: "proved"
+      note: "Comparator surface: MultipoleBKTAudit/Proposition462/, with shared Definitions.lean."
+    - source: "Proposition 5.43 (upper bound)"
+      lean: "MultipoleBKT.proposition_5_43"
+      module: "MultipoleBKT.Frozen.Proposition543"
+      status: "proved"
+      note: "Comparator surface: MultipoleBKTAudit/Proposition543/, with shared Definitions.lean."
+    - source: "Proposition 5.45 (reduction to multipoles of size at most p)"
+      lean: "MultipoleBKT.proposition_5_45"
+      module: "MultipoleBKT.Frozen.Proposition545"
+      status: "proved"
+      note: "Comparator surface: MultipoleBKTAudit/Proposition545/, with shared Definitions.lean."
+    - source: "Lemma 5.46 (cluster expansion of the reduced partition function)"
+      lean: "MultipoleBKT.lemma_5_46"
+      module: "MultipoleBKT.Frozen.Lemma546"
+      status: "proved"
+      note: "Comparator surface: MultipoleBKTAudit/Lemma546/, with shared Definitions.lean."
+
+acknowledgements: >-
+  Built on Lean 4, Mathlib, Lake, the imported companion library TwoComponentCoulomb,
+  leanprover/comparator, NanoDa and con-ron. Scott Armstrong shared the setup used for the
+  formalization. S. Serfaty was supported by NSF grant DMS-2000205 and by the Simons
+  Foundation through the Simons Investigator program.
